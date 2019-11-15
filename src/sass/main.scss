@@ -1,0 +1,25 @@
+// UTILS
+@import "reset";
+@import "mixins";
+
+// LIBS
+@import "libs/bootstrap-grid";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+
+// BASE
+@import "fonts";
+@import "base";
+
+// COMPONENTS
+@import "buttons";
+@import "header";
+@import "footer";
+
+/* Главная */
+@import "home";
+@import "about";
+@import "company";
+@import "scope";
+@import "news";
+@import "blog";

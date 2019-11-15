@@ -1,0 +1,56 @@
+.btn{
+  padding: 1.5rem 3rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $baseFont;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #001b3f;
+  text-decoration: none;
+  overflow: hidden;
+  outline: none;
+  z-index: 2;
+  border: 0.1rem solid rgba(#00aa7e,0.2);
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    color: #ffffff;
+    background-color: #00aa7e;
+  }
+  &--fill {
+
+    padding: 2.8rem 6rem;
+    color: #ffffff;
+    background-color: #00a077;
+    border: none;
+
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      width:calc(100% - 7rem);
+      transform: translateX(-50%) skew(-45deg,0deg);
+      background-color: #00aa7e;
+      transition: all 0.5s ease-in-out;
+      pointer-events: none;
+      user-select: none;
+      z-index: -1;
+    }
+    &:hover {
+      &:before {
+        width: 0;
+      }
+    }
+
+  }
+  &-wrapper {
+    padding: 1px;
+    display: inline-block;
+    border: 0.1rem solid rgba(#00aa7e,0.8);
+  }
+}

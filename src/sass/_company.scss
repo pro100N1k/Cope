@@ -1,0 +1,186 @@
+.company {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 36rem;
+  @media all and (max-width: 480px) {
+    flex-wrap: wrap;
+  }
+  @media all and (max-width: 480px) {
+    height: auto;
+  }
+  &-section {
+    position: relative;
+    padding: 9rem 0;
+    @media all and (max-width: 1024px) {
+      padding: 8rem 0 5rem;
+    }
+    .base__title {
+      top: 50%;
+      left: 20.5rem;
+      transform: translateY(-50%) scale(-1,-1);
+    }
+  }
+
+  &-item {
+    padding: 4rem;
+    position: relative;
+    width: calc((100% / 2) - 0.75rem);
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 1.5rem 4rem rgba(102, 102, 102, 0.2);
+    overflow: hidden;
+
+    @media all and (max-width: 480px) {
+      width: 100%;
+      padding: 2rem;
+      min-height: 30rem;
+      &:first-of-type {
+        margin-bottom: 3rem;
+      }
+    }
+
+
+
+    &:hover {
+      .company-item__img {
+        transform: scale(1.05,1.05);
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      z-index: 2;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%; //17.1rem
+        background-image: linear-gradient(to top, #000a17 0%, rgba(0, 0, 0, 0) 100%);
+        opacity: 0.5;
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+        &:after {
+          opacity: 0.9;
+          height: 100%;
+        }
+        .company-item-arrow {
+          left: calc(100% + 3.5rem);
+        }
+
+      }
+
+      .company--shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 53rem;
+          height: 100%;
+          transform: translate(100%,0) skew(-40deg,0);
+          background-color: rgba(#000a17,0.3);
+          z-index: 2;
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 53rem;
+          height: 100%;
+          transform: translate(-100%,0) skew(-40deg,0);
+          background-color: rgba(#000a17,0.3);
+          z-index: 2;
+        }
+      }
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &-info {
+      position: relative;
+      z-index: 2;
+      color: #ffffff;
+      pointer-events: none;
+      user-select: none;
+      font-family: $baseFont;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.9rem;
+
+      .company-item-info__title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 2rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: calc(100% + 1rem);
+          width: 3rem;
+          height: 1px;
+          background-color: rgba(#fff,0.3);
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: calc(100% + 3rem);
+          width: 1rem;
+          height: 1px;
+          background-color: #fff;
+        }
+      }
+
+      &__text {
+        position: relative;
+        display: inline-block;
+        max-width: 38.5rem;
+        @media all and (max-width: 420px) {
+          max-width: 30.5rem;
+        }
+      }
+    }
+
+    &-arrow {
+      display: block;
+      position: absolute;
+      top: 0.5rem;
+      left: calc(100% + 1.5rem);
+      width: 3.2rem;
+      height: 0.7rem;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
